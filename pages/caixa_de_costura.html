@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caixa de Costura — Muito Fio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    body {
+      background: var(--creme);
+      padding: 4rem 2rem;
+    }
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .dash-logo {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--tabaco);
+      text-decoration: none;
+    }
+    .dash-logo span { color: var(--palha); }
+    .dash-title {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+    
+    .grid-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .category-card {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 4px;
+      border-top: 3px solid var(--argila);
+      box-shadow: 0 10px 30px rgba(58, 46, 36, 0.04);
+      transition: transform 0.3s;
+    }
+    .category-card:hover { transform: translateY(-4px); }
+    
+    .cat-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .cat-title {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--tabaco);
+      margin-bottom: 1.5rem;
+      border-bottom: 0.5px solid rgba(158, 104, 95, 0.2);
+      padding-bottom: 1rem;
+    }
+    
+    .doc-link {
+      display: block;
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 0;
+      border-bottom: 0.5px dashed rgba(158, 104, 95, 0.2);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .doc-link:last-child { border-bottom: none; }
+    .doc-link:hover {
+      color: var(--argila);
+      padding-left: 5px;
+    }
+    
+    .back-btn {
+      display: inline-block;
+      margin-top: 4rem;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--tabaco); }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-header">
+    <a href="../index.html" class="dash-logo" style="display: inline-block; margin-bottom: 1rem;"><img src="../assets/brand/SVG Sample.svg" alt="Muito Fio" style="height: 80px; max-width: 90vw; width: auto;"></a>
+    <div class="dash-title">Caixa de Costura - Manuais e Regras</div>
+  </div>
+
+  <div class="grid-container">
+    
+    <!-- Categoria 1 -->
+    <div class="category-card">
+      <div class="cat-icon">🎨</div>
+      <h2 class="cat-title">Identidade da Marca</h2>
+      <a href="marca/essencia_da_marca.html" class="doc-link">Identidade e Essência</a>
+      <a href="marca/guia_de_estilo.html" class="doc-link">Manual de Identidade Visual (Site)</a>
+    </div>
+
+    <!-- Categoria 2 -->
+    <div class="category-card">
+      <div class="cat-icon">⚖️</div>
+      <h2 class="cat-title">Jurídico</h2>
+      <a href="juridico/contrato_encomenda.html" class="doc-link">Contrato de Encomendas</a>
+      <a href="juridico/termos_consultoria.html" class="doc-link">Termos de Consultoria</a>
+    </div>
+
+    <!-- Categoria 3 -->
+    <div class="category-card">
+      <div class="cat-icon">🕰️</div>
+      <h2 class="cat-title">Rotina e Produção</h2>
+      <a href="rotina/horarios_de_trabalho.html" class="doc-link">Horários de Trabalho</a>
+    </div>
+
+    <!-- Categoria 4 -->
+    <div class="category-card">
+      <div class="cat-icon">💬</div>
+      <h2 class="cat-title">Atendimento</h2>
+      <a href="atendimento/guia_whatsapp.html" class="doc-link">Guia Automático WhatsApp</a>
+      <a href="atendimento/embalagem_e_envio.html" class="doc-link">Embalagem e Envios</a>
+    </div>
+
+    <!-- Categoria 5 -->
+    <div class="category-card">
+      <div class="cat-icon">📸</div>
+      <h2 class="cat-title">Marketing</h2>
+      <a href="marketing/guia_instagram.html" class="doc-link">Dicas para o Instagram</a>
+    </div>
+
+  </div>
+
+  <div style="text-align: center;">
+    <a href="../index.html" class="back-btn">← Voltar para o Site</a>
+  </div>
+
+</body>
+</html>
+
