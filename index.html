@@ -7,102 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    .secret-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--tabaco);
-      opacity: 0.7;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 10px;
-      font-family: var(--sans);
-      transition: opacity 0.3s;
-      z-index: 1000;
-    }
-    .secret-btn:hover { opacity: 0.5; }
-    
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(247, 243, 238, 0.95);
-      backdrop-filter: blur(5px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-      z-index: 2000;
-    }
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .modal-box {
-      background: #fff;
-      padding: 4rem;
-      border-radius: 4px;
-      box-shadow: 0 20px 40px rgba(58, 46, 36, 0.08);
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-      border-top: 3px solid var(--argila);
-      transform: translateY(20px);
-      transition: transform 0.4s ease;
-    }
-    .modal-overlay.active .modal-box {
-      transform: translateY(0);
-    }
-    .modal-title {
-      font-family: var(--serif);
-      font-size: 2rem;
-      color: var(--tabaco);
-      font-weight: 300;
-      margin-bottom: 1rem;
-    }
-    .modal-input {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid rgba(158, 104, 95, 0.3);
-      border-radius: 2px;
-      font-family: var(--sans);
-      font-size: 14px;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      outline: none;
-      letter-spacing: 0.1em;
-      color: var(--text);
-    }
-    .modal-input:focus { border-color: var(--argila); }
-    .modal-btn {
-      background: var(--argila);
-      color: var(--creme);
-      border: none;
-      padding: 12px 24px;
-      width: 100%;
-      font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .modal-btn:hover { background: var(--tabaco); }
-    .error-msg {
-      color: #9e685f;
-      font-size: 12px;
-      margin-top: 1rem;
-      display: none;
-    }
-  </style>
-</head>
+  </head>
 <body>
+  <div class="cursor" id="cursor"></div>
+
 
   <button class="secret-btn" onclick="openModal()">Caixa de Costura</button>
 
@@ -153,6 +61,17 @@
     function handleEnter(e) {
       if(e.key === 'Enter') checkPassword();
     }
+  </script>
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a,button,.slogan-card,.s-prod-card,.swatch,.rule-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+    });
   </script>
 </body>
 </html>

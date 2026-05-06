@@ -7,26 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <style>
-    body { background: var(--creme); }
-    .doc-page { max-width: 800px; margin: 4rem auto; background: #fff; padding: 4rem; border-radius: 4px; box-shadow: 0 10px 40px rgba(58, 46, 36, 0.05); }
-    .doc-header { text-align: center; border-bottom: 0.5px solid rgba(158, 104, 95, 0.2); padding-bottom: 2rem; margin-bottom: 3rem; }
-    .doc-logo { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; letter-spacing: 0.04em; color: var(--tabaco); text-decoration: none; display: inline-block; }
-    .doc-logo span { color: var(--palha); }
-    .doc-content { font-family: var(--sans); color: var(--text); font-weight: 300; line-height: 1.8; }
-    .doc-content h1 { font-family: var(--serif); color: var(--tabaco); font-size: 2.2rem; font-weight: 300; margin-bottom: 1.5rem; }
-    .doc-content h2 { font-family: var(--serif); color: var(--argila); font-size: 1.6rem; font-weight: 400; margin-top: 2.5rem; margin-bottom: 1rem; }
-    .doc-content p { margin-bottom: 1.2rem; }
-    .doc-content ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
-    .doc-content li { margin-bottom: 0.5rem; }
-    .doc-content blockquote { border-left: 3px solid var(--palha); padding-left: 1rem; color: var(--muted); font-style: italic; margin-bottom: 1.2rem; background: rgba(196, 168, 32, 0.05); padding: 1rem; }
-    .doc-content hr { border: 0; border-top: 0.5px solid rgba(158, 104, 95, 0.2); margin: 2rem 0; }
-    .doc-content strong { font-weight: 500; color: #4A3828; }
-    .back-btn { display: inline-block; margin-top: 3rem; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .back-btn:hover { color: var(--tabaco); }
-  </style>
-</head>
+  </head>
 <body>
+  <div class="cursor" id="cursor"></div>
+
   <div class="doc-page">
     <header class="doc-header">
       <a href="../caixa_de_costura.html" class="doc-logo" style="display: block;"><img src="../../assets/brand/SVG Sample.svg" alt="Muito Fio" style="height: 60px; max-width: 90vw; width: auto;"></a>
@@ -61,6 +45,17 @@
       <a href="../caixa_de_costura.html" class="back-btn no-print">← Voltar para Caixa de Costura</a>
     </main>
   </div>
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a,button,.slogan-card,.s-prod-card,.swatch,.rule-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+    });
+  </script>
 </body>
 </html>
 
